@@ -1,0 +1,22 @@
+2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Starting YyjhServiceApplicationTests on LAPTOP-62MT8TBF with PID 212 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- No active profile set, falling back to default profiles: default
+2019/09/11-11:48 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$79e540c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/11-11:48 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/11-11:48 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Started YyjhServiceApplicationTests in 7.321 seconds (JVM running for 8.64)
+2019/09/11-11:48 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Starting YyjhServiceApplicationTests on LAPTOP-62MT8TBF with PID 12696 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- No active profile set, falling back to default profiles: default
+2019/09/11-11:53 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ff3e059a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/11-11:53 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/11-11:53 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Started YyjhServiceApplicationTests in 5.092 seconds (JVM running for 6.171)
+2019/09/11-11:53 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/09/11-11:53 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/09/11-11:53 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/11-11:53 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
+2019/09/11-11:53 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.
