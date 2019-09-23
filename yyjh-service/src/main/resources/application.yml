@@ -13,11 +13,14 @@ redis:
     timeout: 6000
 
 spring:
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .html
   http:
     encoding:
       charset: utf-8
       enabled: true
-  # 配置数据库信息
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/yyjh_datasource?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
@@ -41,10 +44,18 @@ mybatis:
   mapper-locations: classpath:mybatis/*/*.xml
   type-aliases-package: com.sxp.yyjhservice
 
-#日志自定义配置
+
 logging:
   file: springbootdemo.log
   path: /var/log/
   pattern:
     console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
     file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
+
+file:
+  upload:
+    path:
+      datasource:
+        csv: /yyjhfiles/datasource/csv
+        excel: /yyjhfiles/datasource/excel
+

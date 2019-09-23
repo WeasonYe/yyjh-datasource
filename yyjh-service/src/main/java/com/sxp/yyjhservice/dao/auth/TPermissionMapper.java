@@ -2,19 +2,19 @@ package com.sxp.yyjhservice.dao.auth;
 
 import com.sxp.yyjhservice.domain.auth.TPermission;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
+
 
 @Repository
 public interface TPermissionMapper {
-    int deleteByPrimaryKey(Integer id);
+    int delTPermissionById(Integer id);
 
-    int insert(TPermission record);
+    int addTPermission(TPermission record);
 
-    int insertSelective(TPermission record);
+    TPermission findTPermissionById(Integer id);
 
-    TPermission selectByPrimaryKey(Integer id);
+    int updTPermissionById(TPermission record);
 
-    int updateByPrimaryKeySelective(TPermission record);
-
-    int updateByPrimaryKey(TPermission record);
+    List<TPermission> getAll();
 }

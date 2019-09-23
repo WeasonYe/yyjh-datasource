@@ -1,22 +1,147 @@
-2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Starting YyjhServiceApplicationTests on LAPTOP-62MT8TBF with PID 212 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
-2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- No active profile set, falling back to default profiles: default
-2019/09/11-11:48 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$79e540c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
-2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
-2019/09/11-11:48 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
-2019/09/11-11:48 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
-2019/09/11-11:48 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Started YyjhServiceApplicationTests in 7.321 seconds (JVM running for 8.64)
-2019/09/11-11:48 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
-2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Starting YyjhServiceApplicationTests on LAPTOP-62MT8TBF with PID 12696 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
-2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- No active profile set, falling back to default profiles: default
-2019/09/11-11:53 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ff3e059a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
-2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
-2019/09/11-11:53 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
-2019/09/11-11:53 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
-2019/09/11-11:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplicationTests- Started YyjhServiceApplicationTests in 5.092 seconds (JVM running for 6.171)
-2019/09/11-11:53 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
-2019/09/11-11:53 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
-2019/09/11-11:53 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
-2019/09/11-11:53 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
-2019/09/11-11:53 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.
+2019/09/12-09:21 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 1724 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-09:21 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-09:21 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$66ad0d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/12-09:21 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/12-09:21 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/12-09:21 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:21 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/12-09:21 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Started TDatasourceMapperTest in 8.625 seconds (JVM running for 10.512)
+2019/09/12-09:21 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/09/12-09:21 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/09/12-09:21 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:21 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
+2019/09/12-09:21 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 11760 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-09:22 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$40a28036] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/12-09:22 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:22 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Started TDatasourceMapperTest in 5.11 seconds (JVM running for 6.148)
+2019/09/12-09:22 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/09/12-09:22 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/09/12-09:22 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:22 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
+2019/09/12-09:22 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 8516 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-09:22 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5fb33a09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/12-09:22 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:22 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Started TDatasourceMapperTest in 4.997 seconds (JVM running for 6.049)
+2019/09/12-09:22 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/09/12-09:22 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/09/12-09:22 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:22 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
+2019/09/12-09:22 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 728 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-09:22 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2e458d21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/12-09:22 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:22 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/12-09:22 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Started TDatasourceMapperTest in 5.026 seconds (JVM running for 6.074)
+2019/09/12-09:22 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/09/12-09:22 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/09/12-09:22 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/12-09:22 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
+2019/09/12-09:22 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.
+2019/09/12-14:05 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 14444 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-14:05 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-14:17 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 12816 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-14:17 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-14:17 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$782f4881] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/12-14:17 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/12-14:17 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/12-14:17 [main] WARN  org.springframework.web.context.support.GenericWebApplicationContext- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceController': Unsatisfied dependency expressed through field 'tDatasourceService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.sxp.yyjhservice.service.datasource.TDatasourceService' available: expected single matching bean but found 2: TDatasourceServiceImpl,TDatasourceService
+2019/09/12-14:17 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019/09/12-14:17 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field tDatasourceService in com.sxp.yyjhservice.controller.DataSourceController required a single bean, but 2 were found:
+	- TDatasourceServiceImpl: defined in file [E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes\com\sxp\yyjhservice\service\datasource\TDatasourceServiceImpl.class]
+	- TDatasourceService: defined in file [E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes\com\sxp\yyjhservice\service\datasource\TDatasourceService.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2019/09/12-14:17 [main] ERROR org.springframework.test.context.TestContextManager- Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@4fb61f4a] to prepare test instance [com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest@3eee3e2b]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceController': Unsatisfied dependency expressed through field 'tDatasourceService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.sxp.yyjhservice.service.datasource.TDatasourceService' available: expected single matching bean but found 2: TDatasourceServiceImpl,TDatasourceService
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.sxp.yyjhservice.service.datasource.TDatasourceService' available: expected single matching bean but found 2: TDatasourceServiceImpl,TDatasourceService
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:221)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1168)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 42 common frames omitted
+2019/09/12-14:19 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Starting TDatasourceMapperTest on LAPTOP-62MT8TBF with PID 128 (started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service)
+2019/09/12-14:19 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- No active profile set, falling back to default profiles: default
+2019/09/12-14:19 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$782f4881] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/09/12-14:19 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/09/12-14:19 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/09/12-14:19 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/09/12-14:19 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/09/12-14:19 [main] INFO  com.sxp.yyjhservice.dao.datasource.TDatasourceMapperTest- Started TDatasourceMapperTest in 5.36 seconds (JVM running for 6.484)
+2019/09/12-14:19 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/09/12-14:19 [main] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/09/12-14:19 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/09/12-14:19 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown initiated...
+2019/09/12-14:19 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Shutdown completed.

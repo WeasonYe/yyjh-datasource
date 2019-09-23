@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>数据源管理</title>
+		<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="../../bootstrap/css/bootstrap-table.min.css" rel="stylesheet" type="text/css">
+		<link href="../../bootstrap/css/bootstrap-select.css" rel="stylesheet" type="text/css">
+		<link href="../../css/datatables.min.css"></link>
+		<style>
+			.add-btn {
+				float: right;
+				margin-top: 5%;
+			}
+			
+			.choosen-btn {
+				align-content: center;
+				vertical-align: middle;
+				min-width: 200px;
+				min-height: 200px;
+				border: solid #000000 1px;
+				border-radius: 0;
+			}
+			
+			.modal-content-color {
+				background-color: #e1edf9;
+			}
+			
+			.choosen-label {
+				font-family: "微软雅黑";
+				font-weight: bold;
+				font-size: large;
+				text-align: center;
+			}
+			
+			.csv-files {
+				min-height: 300px;
+				min-width: 300px;
+				border: solid 1px;
+				margin-top: 10px;
+			}
+			
+			input[type='file'] {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="../../js/jquery-2.1.1.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap-select.js"></script>
+		<script src="../../bootstrap/js/bootstrap-table.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../js/jquery.ui.widget.js"></script>
+		<script src="../../js/jquery.iframe-transport.js"></script>
+		<script src="../../js/jquery.fileupload.js"></script>
+		<script src="../../js/datasource.js"></script>
+		<script src="../../js/datatables.min.js"></script>
+		<div class="container">
+			<div class="row">
+				<button id="add-btn" class="btn btn-success add-btn" data-toggle="modal" data-target="#showDrivers_choosen">添加数据</button>
+			</div>
+			<div class="row">
+				<!-- 数据源表格-->
+			</div>
+
+			<!-- 数据源选择模态框 -->
+			<div>
+				<div id="showDrivers_choosen" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<div class="choosen-label">请选择数据源</div>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col-lg-1"></div>
+										<button class="col-lg-5 btn btn-info choosen-btn">CSV</button>
+										<button class="col-lg-5 btn btn-info choosen-btn">EXCEL</button>
+										<div class="col-lg-1"></div>
+									</div>
+									<div class="row">
+										<div class="col-lg-1"></div>
+										<button class="col-lg-5 btn btn-info choosen-btn">MYSQL</button>
+										<button class="col-lg-5 btn btn-info choosen-btn">REDIS</button>
+										<div class="col-lg-1"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- CSV导入模态框 -->
+			<div>
+				<div id="csv_import" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<div class="choosen-label">文件导入
+										<span data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+									</div>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col-lg-10"></div>
+										<div class="col-lg-1">
+											<button id="csv-add-btn" class="btn btn-success" onclick="document.getElementById('csv_upload').click()">添加</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-1"></div>
+										<div class="col-lg-10">
+											<div class="row files csv-files">
+												<!--文件上传功能-->
+												<div>
+													<!--生成文件上传信息-->
+													<table id="csv_datas" class="table table-bordered" style="width:100%">
+														<thead>
+															<tr>
+																<th>文件名</th>
+																<th>文件类型</th>
+																<th>文件大小</th>
+															</tr>
+														</thead>
+														<tbody>
+
+														</tbody>
+														<tfoot>
+														</tfoot>
+													</table>
+												</div>
+												<div>
+													<input type="file" name="csv_upload" id="csv_upload" />
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-1"></div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button id="w_preview" class="btn btn-info">全部预览</button>
+									<button id="w_submit" class="btn btn-success">全部上传</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--csv文件预览模态框-->
+			<div>
+				<div id="csv_preview" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<!--生成选项卡-->
+									<span id="csv_btngroup"></span>
+									<span id="csv_preview_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+								</div>
+								<div class="modal-body">
+									<div class="table-responsive">
+										<table id="csv_table" class="table table-hover">
+
+										</table>
+									</div>
+								</div>
+								<div class="modal-footer">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- EXCEL导入模态框 -->
+			<div>
+				<div id="excel_import" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<div class="choosen-label">文件导入
+										<span data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+									</div>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col-lg-10"></div>
+										<div class="col-lg-1">
+											<button id="excel-add-btn" class="btn btn-success" onclick="document.getElementById('excel_upload').click()">添加</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-1"></div>
+										<div class="col-lg-10">
+											<div class="row files csv-files">
+												<!--文件上传功能-->
+												<div>
+													<!--生成文件上传信息-->
+													<table id="excel_datas" class="table table-bordered" style="width:100%">
+														<thead>
+															<tr>
+																<th>文件名</th>
+																<th>文件类型</th>
+																<th>文件大小</th>
+																<th>是否过滤</th>
+																<th>操作</th>
+															</tr>
+														</thead>
+														<tbody>
+
+														</tbody>
+														<tfoot>
+														</tfoot>
+													</table>
+
+												</div>
+												<div>
+													<input type="file" name="excel_upload" id="excel_upload" />
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-1"></div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button id="e_preview" class="btn btn-info">全部预览</button>
+									<button id="e_submit" class="btn btn-success">全部上传</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--excel文件预览模态框-->
+			<div>
+				<div id="excel_preview" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<!--生成选项卡-->
+									<div id="excel_preview_btngroup"></div>
+									<div id="excel_preview_select"></div>
+									<span id="excel_preview_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+								</div>
+								<div class="modal-body">
+									<div class="table-responsive">
+										<table id="excel_preview_table" class="table table-hover">
+
+										</table>
+									</div>
+								</div>
+								<div class="modal-footer">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--excel过滤配置模态框-->
+			<div>
+				<div id="excel_interpret" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<input type="hidden" id="ex_filename"/>
+									<div style="font-size: large;" class="glyphicon glyphicon-circle-arrow-left" onclick="ex_inter_back()"></div>
+								</div>
+								<form action="#" onsubmit="return false">
+									<div class="modal-body">
+										<div id="interpret_line">
+											<div>行号过滤:</div>
+											<div>
+												<label>起始行号：</label>
+												<input type="text" id="start_line" class="form-inline"/>
+												&nbsp;&nbsp;
+												<label>结束行号：</label>
+												<input type="text" id="end_line" class="form-inline" />
+											</div>
+										</div>
+										<div id="index_string">
+											<div>
+												<div>
+													<div>
+														<label>文本过滤：</label>
+														<span style="float: right;">
+															<label>过滤方式：</label>
+															<input type="radio" value="and" name="index_logic" class="radio-inline"/>合并
+															<input type="radio" value="or" name="index_logic" class="radio-inline"/>或者
+														</span>
+													</div>
+												</div>
+												<div class="oper_string">
+														<div>
+															<label>起始文本：</label>
+															<input type="text" class="form-inline" />
+														</div>
+														<div>
+															<label>结束文本：</label>
+															<input type="text" class="form-inline" />
+														</div>
+														<div>
+															<label>包含文本：</label>
+															<input type="text" class="form-inline" />
+														</div>
+												</div>
+												
+											</div>
+											<div>
+												<span style="float: right;font-size: large;" onclick="create_inter_div()"class="glyphicon glyphicon-plus-sign"></span>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<input type="reset" value="重置" class="btn btn-default" />
+										<button onclick="excel_interpret_submit()" class="btn btn-success">完成</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

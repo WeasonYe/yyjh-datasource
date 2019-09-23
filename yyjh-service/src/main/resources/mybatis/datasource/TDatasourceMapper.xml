@@ -16,37 +16,23 @@
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
-    <result column="encode" property="encode" jdbcType="VARCHAR" />
+    <result column="encode" property="encode" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, user_id, type, createtime, updatetime, database_name, alias, driver, url, port, 
     auth, username, password, description, encode
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findTDataSourceById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from t_datasource
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="delTDataSourceById" parameterType="java.lang.Integer" >
     delete from t_datasource
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource" >
-    insert into t_datasource (id, user_id, type, 
-      createtime, updatetime, database_name, 
-      alias, driver, url, 
-      port, auth, username, 
-      password, description, encode
-      )
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{databaseName,jdbcType=VARCHAR}, 
-      #{alias,jdbcType=VARCHAR}, #{driver,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
-      #{port,jdbcType=INTEGER}, #{auth,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{encode,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource" >
+  <insert id="addTDataSource" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource" >
     insert into t_datasource
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -139,11 +125,11 @@
         #{description,jdbcType=VARCHAR},
       </if>
       <if test="encode != null" >
-        #{encode,jdbcType=VARCHAR},
+        #{encode},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource" >
+  <update id="updTDataSourceById" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource" >
     update t_datasource
     <set >
       <if test="userId != null" >
@@ -186,27 +172,14 @@
         description = #{description,jdbcType=VARCHAR},
       </if>
       <if test="encode != null" >
-        encode = #{encode,jdbcType=VARCHAR},
+        encode = #{encode},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource" >
-    update t_datasource
-    set user_id = #{userId,jdbcType=VARCHAR},
-      type = #{type,jdbcType=VARCHAR},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      database_name = #{databaseName,jdbcType=VARCHAR},
-      alias = #{alias,jdbcType=VARCHAR},
-      driver = #{driver,jdbcType=VARCHAR},
-      url = #{url,jdbcType=VARCHAR},
-      port = #{port,jdbcType=INTEGER},
-      auth = #{auth,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
-      encode = #{encode,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+  <select id="getAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_datasource
+  </select>
 </mapper>
