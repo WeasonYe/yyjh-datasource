@@ -14,7 +14,7 @@ import java.util.List;
 @Primary
 @Slf4j
 @Transactional
-public class TDatasourceImpl implements TDatasourceService {
+public class TDatasourceServiceImpl implements TDatasourceService {
 
     @Autowired
     private TDatasourceMapper tDatasourceMapper;
