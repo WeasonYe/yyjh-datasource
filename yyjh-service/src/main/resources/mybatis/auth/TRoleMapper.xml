@@ -13,25 +13,29 @@
   <sql id="Base_Column_List" >
     id, rolename, roledesc, create_time, update_time, remark, state
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findTRoleById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from t_role
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <select id="findTRoleByRolename" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_role
+    where rolename = #{rolename,jdbcType=VARCHAR}
+  </select>
+  <select id="findTRoleByLogid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    SELECT * from t_role WHERE id in(
+	SELECT role_id FROM t_user_role WHERE user_id=(
+		SELECT id FROM t_user WHERE loginId = #{logid,jdbcType=VARCHAR})
+)
+  </select>
+  <delete id="delTRoleById" parameterType="java.lang.Integer" >
     delete from t_role
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.sxp.yyjhservice.domain.auth.TRole" >
-    insert into t_role (id, rolename, roledesc, 
-      create_time, update_time, remark, 
-      state)
-    values (#{id,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{roledesc,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, 
-      #{state,jdbcType=CHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.sxp.yyjhservice.domain.auth.TRole" >
+  <insert id="addTRole" parameterType="com.sxp.yyjhservice.domain.auth.TRole" >
     insert into t_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -80,7 +84,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sxp.yyjhservice.domain.auth.TRole" >
+  <update id="updTRoleById" parameterType="com.sxp.yyjhservice.domain.auth.TRole" >
     update t_role
     <set >
       <if test="rolename != null" >
@@ -104,14 +108,10 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sxp.yyjhservice.domain.auth.TRole" >
-    update t_role
-    set rolename = #{rolename,jdbcType=VARCHAR},
-      roledesc = #{roledesc,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      remark = #{remark,jdbcType=VARCHAR},
-      state = #{state,jdbcType=CHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+  <select id="getAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from t_role
+    where rolename != "super_admin"
+  </select>
 </mapper>

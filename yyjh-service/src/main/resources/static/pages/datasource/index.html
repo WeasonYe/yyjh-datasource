@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../bootstrap/css/bootstrap-select.css" />
+		<link rel="stylesheet" href="../../bootstrap/css/bootstrap-table.min.css" />
+		<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="text-center">登录注册</h2>
+			<div id="menu" class="row row-centered">
+				<ul class="list-group well center-block">
+				    <li class="list-group-item"><button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#login">
+					点击登录
+				</button></li>
+				    <li class="list-group-item"><button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#signup">
+					点击注册
+				</button></li>
+				</ul>
+				<div id="login" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									
+									<div class="choose-label text-center">登录
+										<span class="close glyphicon glyphicon-remove" data-dismiss="modal" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="modal-body">
+									<div role="form" class="form-horizontal">
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">账&nbsp&nbsp&nbsp号</span>
+												<input id="log_id" type="text" placeholder="请输入账户" />
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">邮&nbsp&nbsp&nbsp箱</span>
+												<input id="log_email" type="text" placeholder="请输入邮箱"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">手机号</span>
+												<input id="log_tel" type="text" placeholder="请输入手机号"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">密&nbsp&nbsp&nbsp码</span>
+												<input id="log_pwd" type="password" placeholder="请输入密码"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<button id="log_clear" class="btn btn-default">重置</button>
+										    <button id="log_sub" class="btn btn-default">登录</button>
+									  </div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id="signup" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									
+									<div class="choose-label text-center">注册
+										<span class="close glyphicon glyphicon-remove" data-dismiss="modal" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="modal-body">
+									<form action="#" onsubmit="return false" class="form-horizontal">
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">账&nbsp&nbsp&nbsp号</span>
+												<input id="sign_id" type="text" placeholder="请输入账户" />
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">密&nbsp&nbsp&nbsp码</span>
+												<input id="sign_pwd" type="password" placeholder="请输入密码"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">昵&nbsp&nbsp&nbsp称</span>
+												<input id="sign_nick" type="text" placeholder="请输入昵称"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">邮&nbsp&nbsp&nbsp箱</span>
+												<input id="sign_email" type="text" placeholder="请输入邮箱"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon">手机号</span>
+												<input id="sign_tel" type="text" placeholder="请输入手机号"/>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<input id="sign_clear" type="reset" value="重置" class="btn btn-default"></input>
+										    <button id="sign_sub" class="btn btn-default">注册</button>
+									  </div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap-select.js"></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap-table.min.js" ></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../js/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="../../js/jquery.iframe-transport.js"></script>
+		<script type="text/javascript" src="../../js/jquery.fileupload.js"></script>
+		<script type="text/javascript" src="../../js/index.js"></script>
+	</body>
+</html>

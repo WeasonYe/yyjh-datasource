@@ -1,19 +1,22 @@
 package com.sxp.yyjhservice.dao.auth;
 
 import com.sxp.yyjhservice.domain.auth.TRolePermission;
+import com.sxp.yyjhservice.vo.RolePerVO;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface TRolePermissionMapper {
-    int deleteByPrimaryKey(Integer id);
+    int delTRolePerById(Integer id);
 
-    int insert(TRolePermission record);
+    int addTRolePer(TRolePermission record);
 
-    int insertSelective(TRolePermission record);
+    TRolePermission findTRolePerById(Integer id);
 
-    TRolePermission selectByPrimaryKey(Integer id);
+    int updTRolePerById(TRolePermission record);
 
-    int updateByPrimaryKeySelective(TRolePermission record);
+    List<RolePerVO> getAll();
 
-    int updateByPrimaryKey(TRolePermission record);
+    List<TRolePermission> findTRolePerByR_id(Integer id);
 }

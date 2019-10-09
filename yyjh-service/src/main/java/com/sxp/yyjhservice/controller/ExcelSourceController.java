@@ -50,7 +50,7 @@ public class ExcelSourceController {
                     continue;
                 //生成UUID
                 String uuid= YYJHTools.get32UUID();
-                String real_path=excel_path+File.separator+uuid+suffix;
+                String real_path=excel_path+"/"+uuid+suffix;
                 File excel=new File(real_path);
                 //存库，存文件
                 FileUtils.copyInputStreamToFile(file.getInputStream(),excel);

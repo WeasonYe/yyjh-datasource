@@ -1,19 +1,22 @@
 package com.sxp.yyjhservice.dao.auth;
 
 import com.sxp.yyjhservice.domain.auth.TUserRole;
+import com.sxp.yyjhservice.vo.UserRoleVO;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface TUserRoleMapper {
-    int deleteByPrimaryKey(Integer id);
+    int delTUserRoleById(Integer id);
 
-    int insert(TUserRole record);
+    int addTUserRole(TUserRole record);
 
-    int insertSelective(TUserRole record);
+    TUserRole findTUserRoleById(Integer id);
 
-    TUserRole selectByPrimaryKey(Integer id);
+    int updTUserRoleById(TUserRole record);
 
-    int updateByPrimaryKeySelective(TUserRole record);
+    List<UserRoleVO> getAll();
 
-    int updateByPrimaryKey(TUserRole record);
+    List<TUserRole> findTUserRoleByU_Id(Integer u_id);
 }

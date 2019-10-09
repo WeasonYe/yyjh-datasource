@@ -17,4 +17,8 @@ public interface TPermissionMapper {
     int updTPermissionById(TPermission record);
 
     List<TPermission> getAll();
+
+    List<TPermission> findTPermissionByRoleid(Integer roleid);
+
+    TPermission findTPermissionByName(String permission);
 }

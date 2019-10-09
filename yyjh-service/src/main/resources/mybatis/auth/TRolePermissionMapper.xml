@@ -9,23 +9,23 @@
   <sql id="Base_Column_List" >
     id, role_id, permission_id
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findTRolePerById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from t_role_permission
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <select id="findTRolePerByR_id" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include refid="Base_Column_List" />
+    from t_role_permission
+    where role_id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="delTRolePerById" parameterType="java.lang.Integer" >
     delete from t_role_permission
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.sxp.yyjhservice.domain.auth.TRolePermission" >
-    insert into t_role_permission (id, role_id, permission_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{permissionId,jdbcType=INTEGER}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.sxp.yyjhservice.domain.auth.TRolePermission" >
+  <insert id="addTRolePer" parameterType="com.sxp.yyjhservice.domain.auth.TRolePermission" >
     insert into t_role_permission
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sxp.yyjhservice.domain.auth.TRolePermission" >
+  <update id="updTRolePerById" parameterType="com.sxp.yyjhservice.domain.auth.TRolePermission" >
     update t_role_permission
     <set >
       <if test="roleId != null" >
@@ -62,10 +62,12 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sxp.yyjhservice.domain.auth.TRolePermission" >
-    update t_role_permission
-    set role_id = #{roleId,jdbcType=INTEGER},
-      permission_id = #{permissionId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+  <select id="getAll" resultType="com.sxp.yyjhservice.vo.RolePerVO" >
+    select a.rolename,d.role_id,d.permission,d.permission_id,d.id
+    from t_role a inner join (select b.id,b.role_id,b.permission_id,c.permission
+                                from t_role_permission b,t_permission c
+                                where b.permission_id = c.id) d
+    on a.id = d.role_id
+    where a.id != 1
+  </select>
 </mapper>

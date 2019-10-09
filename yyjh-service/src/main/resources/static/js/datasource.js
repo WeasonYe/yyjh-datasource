@@ -16,15 +16,18 @@ $(document).ready(function() {
 
 		init_excel_datas();
 	})
+	
 	$(db_btns[2]).click(function() {
 		//MYSQL弹窗
 		$("#showDrivers_choosen").modal("hide")
+		$("#mysql_import").modal("show");
 
+		init_mysql_datas();
 	})
+
 	$(db_btns[3]).click(function() {
 		//REDIS弹窗
 		$("#showDrivers_choosen").modal("hide")
-
 	})
 
 	//CSV操作
@@ -305,7 +308,7 @@ function init_csv_table(init_filename) {
 			th = {
 				field: key,
 				title: key,
-				visible: true,
+				visible: true
 			}
 			ths.push(th);
 		}

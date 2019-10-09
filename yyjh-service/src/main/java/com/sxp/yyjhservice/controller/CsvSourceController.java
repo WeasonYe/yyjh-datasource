@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.sxp.tools.JDBCTools;
 import com.sxp.tools.YYJHTools;
 import com.sxp.yyjhservice.domain.datasource.TDatasource;
 import com.sxp.yyjhservice.enumeration.DatasourceEnum;
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/csv")
@@ -48,7 +52,7 @@ public class CsvSourceController {
                     continue;
                 //生成UUID
                 String uuid= YYJHTools.get32UUID();
-                String real_path=csv_path+File.separator+uuid+suffix;
+                String real_path=csv_path+"/"+uuid+suffix;
                 File csv=new File(real_path);
                 //存库，存文件
                 FileUtils.copyInputStreamToFile(file.getInputStream(),csv);
@@ -110,6 +114,44 @@ public class CsvSourceController {
             result.setCode(DatasourceEnum.SUCCESS.getCode());
             result.setMsg(DatasourceEnum.SUCCESS.getMsg());
             result.setPayload(datas);
+        }
+        return result;
+    }
+
+    @RequestMapping("/csvSave")
+    public Object csvSave(@RequestParam("csvsave_id") Integer id, @RequestParam("csvsave_interpret") String interpret) throws IOException, SQLException {
+        ControllerResult result = new ControllerResult();
+        ObjectMapper om = new ObjectMapper();
+        TDatasource td = tDatasourceService.findTDataSourceById(id);
+        String filename = td.getDatabaseName() + ".csv";
+        File directory=new File(csv_path);
+        File[] files = directory.listFiles();
+        ArrayNode csv_con_json = om.createArrayNode();
+        List<String> keys = new ArrayList<String>();
+        String primary_key = "col1";
+        for (File file:files){
+            if (filename.equals(file.getName())){
+                List<String> csv_content = FileUtils.readLines(file,"UTF-8");
+                    for (String line : csv_content){
+                    int index = 1;
+                    String[] cols = line.split(interpret);
+                    ObjectNode on = om.createObjectNode();
+                    for (String col: cols){
+                        if (keys.size() < cols.length){
+                            keys.add("col" + index);
+                        }
+                        on.put("col" + index,col);
+                        index++;
+                    }
+                    csv_con_json.add(on);
+                }
+                break;
+            }
+        }
+        boolean flag = JDBCTools.createTable(td.getDatabaseName(),keys,csv_con_json,primary_key);
+        if (flag){
+            result.setCode(DatasourceEnum.SUCCESS.getCode());
+            result.setMsg(DatasourceEnum.SUCCESS.getMsg());
         }
         return result;
     }

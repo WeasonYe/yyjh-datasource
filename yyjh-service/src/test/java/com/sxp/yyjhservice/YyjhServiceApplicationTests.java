@@ -23,9 +23,4 @@ public class YyjhServiceApplicationTests {
         System.out.println(jedisUtil.get("jedis_key1"));
     }
 
-    @Test
-    public void testMybatis(){
-        System.out.println(tUserMapper.selectByPrimaryKey(1));
-    }
-
 }

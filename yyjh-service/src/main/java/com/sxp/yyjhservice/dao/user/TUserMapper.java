@@ -3,17 +3,24 @@ package com.sxp.yyjhservice.dao.user;
 import com.sxp.yyjhservice.domain.user.TUser;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+
 @Repository
 public interface TUserMapper {
-    int deleteByPrimaryKey(Integer id);
+    int delTUserById(Integer id);
 
-    int insert(TUser record);
+    int addTUser(TUser record);
 
-    int insertSelective(TUser record);
+    TUser findTUserById(Integer id);
 
-    TUser selectByPrimaryKey(Integer id);
+    int updTUser(TUser record);
 
-    int updateByPrimaryKeySelective(TUser record);
+    List<TUser> getAll();
 
-    int updateByPrimaryKey(TUser record);
+    TUser findTUserByLogid(String loginid);
+
+    TUser findTUserByTel(String tel);
+
+    TUser findUserByEmail(String email);
 }

@@ -1,7 +1,7 @@
 package com.sxp.yyjhservice.enumeration;
 
 public enum DatasourceEnum {
-    SUCCESS(0,"success"), FAIL(-1,"erro"),EXCEPTION(-2,"exception"),
+    SUCCESS(0,"success"), FAIL(-1,"fail"),EXCEPTION(-2,"exception"),
     NOFILE(-3,"nofiles");
 
     private final Integer code;

@@ -11,4 +11,9 @@ public class TestController {
     public String testcsv(){
         return "datasource/datasource";
     }
+
+    @RequestMapping("/index")
+    public String index(){
+        return "datasource/index";
+    }
 }

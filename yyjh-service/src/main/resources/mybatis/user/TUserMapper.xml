@@ -18,27 +18,40 @@
     id, loginId, password, nickname, userimg, email, tel, create_time, update_time, remark, 
     state
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findTUserById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from t_user
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <select id="getAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+  </select>
+  <select id="findTUserByLogid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    where loginId = #{loginid,jdbcType=VARCHAR}
+  </select>
+  <select id="findTUserByTel" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    where tel = #{tel,jdbcType=VARCHAR}
+  </select>
+  <select id="findUserByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    where email = #{email,jdbcType=VARCHAR}
+  </select>
+  <delete id="delTUserById" parameterType="java.lang.Integer" >
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.sxp.yyjhservice.domain.user.TUser" >
-    insert into t_user (id, loginId, password, 
-      nickname, userimg, email, 
-      tel, create_time, update_time, 
-      remark, state)
-    values (#{id,jdbcType=INTEGER}, #{loginid,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{nickname,jdbcType=VARCHAR}, #{userimg,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{tel,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{remark,jdbcType=VARCHAR}, #{state,jdbcType=CHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.sxp.yyjhservice.domain.user.TUser" >
+  <insert id="addTUser" parameterType="com.sxp.yyjhservice.domain.user.TUser" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -111,7 +124,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sxp.yyjhservice.domain.user.TUser" >
+  <update id="updTUser" parameterType="com.sxp.yyjhservice.domain.user.TUser" >
     update t_user
     <set >
       <if test="loginid != null" >
@@ -147,18 +160,5 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sxp.yyjhservice.domain.user.TUser" >
-    update t_user
-    set loginId = #{loginid,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      nickname = #{nickname,jdbcType=VARCHAR},
-      userimg = #{userimg,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      tel = #{tel,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      remark = #{remark,jdbcType=VARCHAR},
-      state = #{state,jdbcType=CHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+
 </mapper>

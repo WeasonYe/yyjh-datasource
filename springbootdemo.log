@@ -1,38 +1,516 @@
-2019/09/23-09:09 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 5188 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
-2019/09/23-09:09 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
-2019/09/23-09:09 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$beb6e8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019/09/23-09:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
-2019/09/23-09:09 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
-2019/09/23-09:09 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019/09/23-09:09 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
-2019/09/23-09:09 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 6786 ms
-2019/09/23-09:10 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
-2019/09/23-09:10 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
-2019/09/23-09:10 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
-2019/09/23-09:10 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
-2019/09/23-09:10 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
-2019/09/23-09:10 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 14.083 seconds (JVM running for 19.574)
-2019/09/23-09:10 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
-2019/09/23-09:10 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019/09/23-09:10 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
-2019/09/23-09:10 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 61 ms
-2019/09/23-09:10 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
-2019/09/23-16:29 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 12232 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
-2019/09/23-16:29 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
-2019/09/23-16:29 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9c3a0766] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019/09/23-16:29 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
-2019/09/23-16:29 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
-2019/09/23-16:29 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019/09/23-16:29 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
-2019/09/23-16:29 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2773 ms
-2019/09/23-16:29 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
-2019/09/23-16:29 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
-2019/09/23-16:29 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
-2019/09/23-16:29 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
-2019/09/23-16:29 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
-2019/09/23-16:29 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 7.387 seconds (JVM running for 13.103)
-2019/09/23-16:29 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
-2019/09/23-16:29 [RMI TCP Connection(7)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019/09/23-16:29 [RMI TCP Connection(7)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
-2019/09/23-16:29 [RMI TCP Connection(7)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 22 ms
-2019/09/23-16:29 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 12168 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:12 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9c4ebe38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:12 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:12 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:12 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:12 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:12 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 9664 ms
+2019/10/06-10:12 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:12 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:12 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:12 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:12 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 19.927 seconds (JVM running for 30.015)
+2019/10/06-10:12 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 187 ms
+2019/10/06-10:12 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:28 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 8900 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:28 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:28 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cd774351] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:28 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:28 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:28 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:28 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:28 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1969 ms
+2019/10/06-10:28 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:28 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:28 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:28 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:28 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:28 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.233 seconds (JVM running for 5.9)
+2019/10/06-10:28 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:28 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:28 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:28 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 0 ms
+2019/10/06-10:28 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:33 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 14184 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:33 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:33 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee40d292] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:33 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:33 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:33 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:33 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:33 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2234 ms
+2019/10/06-10:33 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:33 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:33 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:33 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:33 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:33 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.452 seconds (JVM running for 6.727)
+2019/10/06-10:33 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:33 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:33 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:33 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 0 ms
+2019/10/06-10:33 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:35 [http-nio-8080-exec-8] WARN  org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver- Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Integer parameter 'id' is not present]
+2019/10/06-10:37 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 752 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:37 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:37 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4e6d7c9e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:37 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:37 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:37 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:37 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:37 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2359 ms
+2019/10/06-10:37 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:37 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:37 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:37 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:37 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:37 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.67 seconds (JVM running for 6.753)
+2019/10/06-10:37 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:37 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:37 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:37 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 16 ms
+2019/10/06-10:37 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 9604 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:38 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a34b7b4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:38 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:38 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:38 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:38 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1822 ms
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:38 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:38 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.853 seconds (JVM running for 5.624)
+2019/10/06-10:38 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 15 ms
+2019/10/06-10:38 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 14588 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:38 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b6ccb3c8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:38 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:38 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:38 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:38 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1781 ms
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:38 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:38 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.828 seconds (JVM running for 5.952)
+2019/10/06-10:38 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 0 ms
+2019/10/06-10:38 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:40 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 4480 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:40 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:40 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$89a483b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:40 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:40 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:40 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:40 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:40 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2187 ms
+2019/10/06-10:40 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:40 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:40 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:40 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:40 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:40 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.093 seconds (JVM running for 5.991)
+2019/10/06-10:40 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:40 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:40 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:40 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 16 ms
+2019/10/06-10:40 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-10:43 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 15680 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-10:43 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-10:43 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7e318689] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-10:43 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-10:43 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-10:43 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-10:43 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-10:43 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1703 ms
+2019/10/06-10:43 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-10:43 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-10:43 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-10:43 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-10:43 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-10:43 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.514 seconds (JVM running for 5.057)
+2019/10/06-10:43 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-10:43 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-10:43 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-10:43 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 0 ms
+2019/10/06-10:43 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-11:15 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 5456 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-11:15 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-11:15 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f9061b5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-11:15 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-11:15 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-11:15 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-11:15 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-11:15 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1651 ms
+2019/10/06-11:15 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-11:15 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-11:15 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-11:15 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-11:15 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-11:15 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.431 seconds (JVM running for 5.033)
+2019/10/06-11:15 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-11:15 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-11:15 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-11:15 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-11:15 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-11:18 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 4760 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-11:18 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-11:18 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5d98e995] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-11:18 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-11:18 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-11:18 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-11:18 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-11:18 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1682 ms
+2019/10/06-11:18 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-11:18 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-11:18 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-11:18 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-11:18 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-11:18 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.449 seconds (JVM running for 5.661)
+2019/10/06-11:18 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-11:18 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-11:18 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-11:18 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 9 ms
+2019/10/06-11:18 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-11:25 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 14680 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-11:25 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-11:25 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d802659e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-11:25 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-11:25 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-11:25 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-11:25 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-11:25 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1753 ms
+2019/10/06-11:25 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-11:25 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-11:25 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-11:25 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-11:25 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-11:25 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.531 seconds (JVM running for 5.131)
+2019/10/06-11:25 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-11:25 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-11:25 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-11:25 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-11:25 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-11:56 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 15088 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-11:56 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-11:56 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a268308d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-11:56 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-11:56 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-11:56 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-11:56 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-11:56 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1868 ms
+2019/10/06-11:56 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-11:56 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-11:56 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-11:56 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-11:56 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-11:56 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.0 seconds (JVM running for 5.542)
+2019/10/06-11:56 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-11:56 [RMI TCP Connection(8)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-11:56 [RMI TCP Connection(8)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-11:56 [RMI TCP Connection(8)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 18 ms
+2019/10/06-11:56 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-14:18 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool- DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=3m11s416ms556µs).
+2019/10/06-16:26 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool- DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=1h43m25s643ms69µs300ns).
+2019/10/06-16:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 14140 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-16:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-16:38 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$de13c7b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-16:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-16:38 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-16:38 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-16:38 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-16:38 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1756 ms
+2019/10/06-16:38 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-16:38 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-16:38 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-16:38 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-16:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-16:38 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.312 seconds (JVM running for 5.78)
+2019/10/06-16:38 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-16:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-16:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-16:38 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 46 ms
+2019/10/06-16:38 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-16:44 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 7748 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-16:44 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-16:44 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bcdbc26e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-16:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-16:44 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-16:44 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-16:44 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-16:44 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1690 ms
+2019/10/06-16:44 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-16:44 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-16:44 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-16:44 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-16:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-16:44 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.388 seconds (JVM running for 4.883)
+2019/10/06-16:44 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-16:44 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-16:44 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-16:44 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-16:44 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-16:47 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 140 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-16:47 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-16:47 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0573400] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-16:47 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-16:47 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-16:47 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-16:47 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-16:47 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1707 ms
+2019/10/06-16:47 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-16:47 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-16:47 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-16:47 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-16:47 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-16:47 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.551 seconds (JVM running for 5.299)
+2019/10/06-16:47 [RMI TCP Connection(5)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-16:47 [RMI TCP Connection(5)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-16:47 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-16:47 [RMI TCP Connection(5)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 13 ms
+2019/10/06-16:47 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:09 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 16516 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:09 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:09 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a2f9bf13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:09 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:09 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:09 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:09 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1646 ms
+2019/10/06-17:09 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:09 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:09 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:09 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:09 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.343 seconds (JVM running for 4.791)
+2019/10/06-17:09 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:09 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:09 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:09 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-17:09 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:13 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 9268 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:13 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:13 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a4976db4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:13 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:13 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:13 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:13 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:13 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1582 ms
+2019/10/06-17:13 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:13 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:13 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:13 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:13 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:13 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.324 seconds (JVM running for 5.018)
+2019/10/06-17:13 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:13 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:13 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:13 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 6 ms
+2019/10/06-17:13 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:14 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 3520 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:14 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:14 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$89f84d6d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:14 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:14 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:14 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:14 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:14 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1762 ms
+2019/10/06-17:14 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:14 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:14 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:14 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:14 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:14 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 4.118 seconds (JVM running for 5.987)
+2019/10/06-17:14 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:14 [RMI TCP Connection(6)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:14 [RMI TCP Connection(6)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:14 [RMI TCP Connection(6)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 10 ms
+2019/10/06-17:14 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:16 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 14572 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:16 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:16 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5f45c9e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:16 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:16 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:16 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:16 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:16 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1711 ms
+2019/10/06-17:16 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:16 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:16 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:16 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:16 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:16 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.402 seconds (JVM running for 5.119)
+2019/10/06-17:16 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:16 [RMI TCP Connection(5)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:16 [RMI TCP Connection(5)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:16 [RMI TCP Connection(5)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 8 ms
+2019/10/06-17:16 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 11272 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:53 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d79f1f33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:53 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:53 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:53 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:53 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1660 ms
+2019/10/06-17:53 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:53 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:53 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:53 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:53 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.353 seconds (JVM running for 5.013)
+2019/10/06-17:53 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:53 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:53 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:53 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-17:53 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:55 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 2904 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:55 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:55 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9108ce8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:55 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:55 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:55 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:55 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:55 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1780 ms
+2019/10/06-17:55 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:55 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:55 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:55 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:55 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:55 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.569 seconds (JVM running for 5.428)
+2019/10/06-17:55 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:55 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:55 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:55 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 8 ms
+2019/10/06-17:55 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:57 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 16560 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:57 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:57 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7e318689] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:57 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:57 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:57 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:57 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:57 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1596 ms
+2019/10/06-17:57 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:57 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:57 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:57 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:57 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:57 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.375 seconds (JVM running for 5.193)
+2019/10/06-17:57 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:57 [RMI TCP Connection(5)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:57 [RMI TCP Connection(5)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:57 [RMI TCP Connection(5)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-17:57 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-17:59 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 17400 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-17:59 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-17:59 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3fc1c99c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-17:59 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-17:59 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-17:59 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-17:59 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-17:59 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1612 ms
+2019/10/06-17:59 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-17:59 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-17:59 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-17:59 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-17:59 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-17:59 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.331 seconds (JVM running for 4.787)
+2019/10/06-17:59 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-17:59 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-17:59 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-17:59 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-17:59 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-18:10 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 9616 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-18:10 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-18:10 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ba1f176d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-18:10 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-18:10 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-18:10 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-18:10 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-18:10 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1830 ms
+2019/10/06-18:10 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-18:10 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-18:10 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-18:10 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-18:10 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-18:10 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.583 seconds (JVM running for 5.369)
+2019/10/06-18:10 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-18:10 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-18:10 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-18:10 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-18:10 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 7536 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-18:12 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ba1f176d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-18:12 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-18:12 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-18:12 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-18:12 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-18:12 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1901 ms
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-18:12 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-18:12 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-18:12 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.761 seconds (JVM running for 5.275)
+2019/10/06-18:12 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-18:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-18:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-18:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 7 ms
+2019/10/06-18:12 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 8172 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-18:12 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$35504227] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-18:12 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-18:12 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-18:12 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-18:12 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-18:12 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1546 ms
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-18:12 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-18:12 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-18:12 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-18:12 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.321 seconds (JVM running for 5.251)
+2019/10/06-18:12 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-18:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-18:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-18:12 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 6 ms
+2019/10/06-18:12 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.
+2019/10/06-18:14 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Starting YyjhServiceApplication on LAPTOP-62MT8TBF with PID 14908 (E:\IDEA\springbootdemos\yyjh-datasource\yyjh-service\target\classes started by LENOVO in E:\IDEA\springbootdemos\yyjh-datasource)
+2019/10/06-18:14 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- No active profile set, falling back to default profiles: default
+2019/10/06-18:14 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ca4d62c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/06-18:14 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/10/06-18:14 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/06-18:14 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019/10/06-18:14 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/06-18:14 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1661 ms
+2019/10/06-18:14 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- JedisPool注入成功！
+2019/10/06-18:14 [main] INFO  com.sxp.yyjhservice.config.jedis.JedisConfig- redis地址：127.0.0.1:6379
+2019/10/06-18:14 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/06-18:14 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver- Exposing 2 endpoint(s) beneath base path '/actuator'
+2019/10/06-18:14 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/10/06-18:14 [main] INFO  com.sxp.yyjhservice.YyjhServiceApplication- Started YyjhServiceApplication in 3.39 seconds (JVM running for 5.166)
+2019/10/06-18:14 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Starting...
+2019/10/06-18:14 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/06-18:14 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/06-18:14 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 8 ms
+2019/10/06-18:14 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource- DatebookHikariCP - Start completed.

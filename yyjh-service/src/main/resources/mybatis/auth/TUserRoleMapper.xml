@@ -9,23 +9,23 @@
   <sql id="Base_Column_List" >
     id, role_id, user_id
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findTUserRoleById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from t_user_role
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <select id="findTUserRoleByU_Id" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from t_user_role
+    where user_id = #{u_id,jdbcType=INTEGER}
+  </select>
+  <delete id="delTUserRoleById" parameterType="java.lang.Integer" >
     delete from t_user_role
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.sxp.yyjhservice.domain.auth.TUserRole" >
-    insert into t_user_role (id, role_id, user_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.sxp.yyjhservice.domain.auth.TUserRole" >
+  <insert id="addTUserRole" parameterType="com.sxp.yyjhservice.domain.auth.TUserRole" >
     insert into t_user_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sxp.yyjhservice.domain.auth.TUserRole" >
+  <update id="updTUserRoleById" parameterType="com.sxp.yyjhservice.domain.auth.TUserRole" >
     update t_user_role
     <set >
       <if test="roleId != null" >
@@ -62,10 +62,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sxp.yyjhservice.domain.auth.TUserRole" >
-    update t_user_role
-    set role_id = #{roleId,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+  <select id="getAll" resultType="com.sxp.yyjhservice.vo.UserRoleVO">
+    select a.loginId,d.user_id,d.role_id,d.rolename,d.id
+    from t_user a inner join (select b.id,b.role_id,b.user_id,c.rolename
+                                from t_user_role b, t_role c
+                                where b.role_id = c.id) d
+                                on a.id = d.user_id
+    where d.role_id != 1 and d.role_id != 3
+  </select>
+
 </mapper>
