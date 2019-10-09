@@ -16,4 +16,10 @@ public interface TDatasourceMapper {
     int updTDataSourceById(TDatasource record);
 
     List<TDatasource> getAll();
+
+    Integer getTotal();
+
+    List<TDatasource> getTDatasourceListPage(TDatasource record);
+
+    int batchDeleteById(List<Integer> idsList);
 }

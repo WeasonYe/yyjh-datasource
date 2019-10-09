@@ -3,6 +3,7 @@ package com.sxp.yyjhservice.service.datasource;
 import com.sxp.yyjhservice.dao.datasource.TDatasourceMapper;
 import com.sxp.yyjhservice.domain.datasource.TDatasource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -53,4 +54,23 @@ public class TDatasourceServiceImpl implements TDatasourceService {
     public List<TDatasource> getAll() {
         return tDatasourceMapper.getAll();
     }
+
+    @Override
+    public Integer getTotal() {
+        return tDatasourceMapper.getTotal();
+    }
+
+    @Override
+    public List<TDatasource> getTDatasourceListPage(TDatasource record) {
+        return tDatasourceMapper.getTDatasourceListPage(record);
+    }
+
+    @Override
+    public boolean batchDeleteById(List<Integer> idsList) {
+        int count=tDatasourceMapper.batchDeleteById(idsList);
+        if (count>0)
+            return true;
+        return false;
+    }
+
 }

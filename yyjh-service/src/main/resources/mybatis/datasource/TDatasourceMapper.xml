@@ -19,7 +19,7 @@
     <result column="encode" property="encode" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_id, type, createtime, updatetime, database_name, alias, driver, url, port, 
+    id, user_id, type, createtime, updatetime, database_name, alias, driver, url, port,
     auth, username, password, description, encode
   </sql>
   <select id="findTDataSourceById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -182,4 +182,64 @@
     <include refid="Base_Column_List" />
     from t_datasource
   </select>
+
+
+  <select id="getTotal" resultType="int">
+    SELECT count(1) FROM t_datasource
+  </select>
+
+  <select id="getTDatasourceListPage" parameterType="com.sxp.yyjhservice.domain.datasource.TDatasource"  resultMap="BaseResultMap">
+  SELECT * FROM t_datasource
+  <if test="(type!=null and type!='') or (content!=null and content!='')">
+    where
+  </if>
+    <if test="type!=null and type!=''">
+      type = #{type}
+    </if>
+    <if test="content!=null and content!=''">
+      and
+    (
+    id like CONCAT('%',#{content},'%')
+    or
+    user_id like CONCAT('%',#{content},'%')
+    or
+    type like CONCAT('%',#{content},'%')
+    or
+    createtime like CONCAT('%',#{content},'%')
+    or
+    updatetime like CONCAT('%',#{content},'%')
+    or
+    database_name like CONCAT('%',#{content},'%')
+    or
+    alias like CONCAT('%',#{content},'%')
+    or
+    driver like CONCAT('%',#{content},'%')
+    or
+    url like CONCAT('%',#{content},'%')
+    or
+    port like CONCAT('%',#{content},'%')
+    or
+    auth like CONCAT('%',#{content},'%')
+    or
+    username like CONCAT('%',#{content},'%')
+    or
+    password like CONCAT('%',#{content},'%')
+    or
+    description like CONCAT('%',#{content},'%')
+    or
+    encode like CONCAT('%',#{content},'%')
+    )
+    </if>
+  LIMIT #{offset},#{limit}
+ </select>
+
+  <delete id="batchDeleteById" parameterType="java.util.List">
+    delete from t_datasource where id in(
+    <foreach collection = "list" item="id" index="index" separator=",">
+      #{id}
+    </foreach>
+    )
+  </delete>
+
+
 </mapper>

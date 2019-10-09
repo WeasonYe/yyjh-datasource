@@ -14,4 +14,10 @@ public interface TDatasourceService {
     boolean updTDataSourceById(TDatasource record);
 
     List<TDatasource> getAll();
+
+    Integer getTotal();
+
+    List<TDatasource> getTDatasourceListPage(TDatasource record);
+
+    boolean batchDeleteById(List<Integer> idsList);
 }
