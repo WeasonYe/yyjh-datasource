@@ -72,10 +72,11 @@ public class JDBCTools {
         int count = -1;
         if (conn != null){
             //拼接建表语句
-            String tableSql = "create table t_" + tableName + " (id int(10) auto";
+            String tableSql = "create table t_" + tableName + " (id int(10) auto_increment primary key,";
             for (String key : keys){
                 tableSql += key + " varchar(50),";
             }
+            tableSql = tableSql.substring(0,tableSql.length()-1);
             tableSql += ");\n";
             //拼接insert语句
             tableSql += "insert into t_"+ tableName + " (";
@@ -100,6 +101,9 @@ public class JDBCTools {
             tableSql = tableSql.substring(0,tableSql.length()-2);
             tableSql += ";";
             Statement smt = conn.createStatement();
+
+            System.out.println(tableSql);
+
             count = smt.executeUpdate(tableSql);
         }
         if (count==0){

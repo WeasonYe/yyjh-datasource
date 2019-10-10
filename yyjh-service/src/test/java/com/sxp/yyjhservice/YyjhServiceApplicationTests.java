@@ -14,13 +14,4 @@ import org.springframework.test.context.junit4.SpringRunner;
 @MapperScan("com.sxp.yyjhservice")
 public class YyjhServiceApplicationTests {
 
-    @Autowired
-    private JedisUtil jedisUtil;
-    @Autowired
-    private TUserMapper tUserMapper;
-    @Test
-    public void contextLoads() {
-        System.out.println(jedisUtil.get("jedis_key1"));
-    }
-
 }

@@ -51,6 +51,7 @@ public class ExcelScreen {
             sheet = wb.getSheetAt(h);//根据下标获取sheet
             Map<String, Object> datas = new LinkedHashMap<>();
             List<Map<String, Object>> sheet_datas = new ArrayList<>();
+            boolean flag3=false;
             //循环取行对象
             for(int i=start;i<=end;i++){
                 //每行当做一个Map来存储
@@ -69,26 +70,65 @@ public class ExcelScreen {
 
                     if (index_logic.equals("or")){
                         for (int k=0;k<index_string.size();k++){
-                            if (test.startsWith((String) index_string.get(k).get("start_string"))&&
-                                    test.endsWith((String) index_string.get(k).get("end_string"))&&
-                                    test.contains((String) index_string.get(k).get("content_string"))){
+                            String start_string;
+                            String end_string;
+                            String content_string;
+                            try {
+                                start_string=index_string.get(k).get("start_string").toString();
+                            }catch (NullPointerException e){
+                                start_string="";
+                            }
+                            try {
+                                 end_string=index_string.get(k).get("end_string").toString();
+                            }catch (NullPointerException e){
+                                 end_string="";
+                            }
+                            try {
+                                 content_string=index_string.get(k).get("content_string").toString();
+                            }catch (NullPointerException e){
+                                 content_string="";
+                            }
+                            System.out.println(start_string+","+end_string+","+content_string);
+                            if (test.startsWith(start_string)&&
+                                    test.endsWith(end_string)&&
+                                    test.contains(content_string)){
                                 flag1=!flag1;
                                 flag2=!flag2;
+                                flag3=!flag3;
                                 break;
                             }
                         }
                     }else {
                         int num=0;
                         for (int k=0;k<index_string.size();k++){
-                            if (test.startsWith((String) index_string.get(k).get("start_string"))&&
-                                    test.endsWith((String) index_string.get(k).get("end_string"))&&
-                                    test.contains((String) index_string.get(k).get("content_string"))){
+                            String start_string;
+                            String end_string;
+                            String content_string;
+                            try {
+                                start_string=index_string.get(k).get("start_string").toString();
+                            }catch (NullPointerException e){
+                                start_string="";
+                            }
+                            try {
+                                end_string=index_string.get(k).get("end_string").toString();
+                            }catch (NullPointerException e){
+                                end_string="";
+                            }
+                            try {
+                                content_string=index_string.get(k).get("content_string").toString();
+                            }catch (NullPointerException e){
+                                content_string="";
+                            }
+                            if (test.startsWith(start_string)&&
+                                    test.endsWith(end_string)&&
+                                    test.contains(content_string)){
                                 num++;
                             }
                         }
                         if (num==index_string.size()){
                             flag1=!flag1;
                             flag2=!flag2;
+                            flag3=!flag3;
                         }
                     }
 
@@ -104,8 +144,11 @@ public class ExcelScreen {
                 }
 
             }
-            datas.put("sheet_datas", sheet_datas);
-            file_datas.add(datas);
+            if (flag3){
+                datas.put("sheet_datas", sheet_datas);
+                file_datas.add(datas);
+            }
+
         }
 
         return file_datas;

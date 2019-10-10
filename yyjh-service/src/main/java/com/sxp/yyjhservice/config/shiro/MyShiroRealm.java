@@ -15,16 +15,20 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
 //实现AuthorizingRealm接口用户用户认证
 public class MyShiroRealm extends AuthorizingRealm {
     @Autowired
+    @Qualifier("userservice")
     private TUserService tUserService;
     @Autowired
+    @Qualifier("roleservice")
     private TRoleService tRoleService;
     @Autowired
+    @Qualifier("perservice")
     private TPermissionService tPermissionService;
     //角色权限和对应权限添加
     @Override

@@ -7,6 +7,9 @@ import com.sxp.yyjhservice.domain.user.TUser;
 import com.sxp.yyjhservice.enumeration.DatasourceEnum;
 import com.sxp.yyjhservice.service.user.TUserService;
 import com.sxp.yyjhservice.vo.ControllerResult;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,15 +29,25 @@ public class LoginController {
     JedisUtil jedisUtil;
 
     @RequestMapping("/login")
-    public Object login(@RequestParam("log_id")Integer id,@RequestParam("log_email")String email,
-                      @RequestParam("log_tel")String tel,@RequestParam("log_pwd")String pwd){
+    public Object login(@RequestParam("log_param")String log_param,@RequestParam("log_pwd")String pwd){
         ControllerResult controllerResult = new ControllerResult();
         controllerResult.setCode(DatasourceEnum.FAIL.getCode());
         controllerResult.setMsg(DatasourceEnum.FAIL.getMsg());
-        TUser user = tUserService.findTUserById(id);
-        if (user !=null){
-            if (user.getEmail().equals(email)&&user.getTel().equals(tel)&&
-                user.getPassword().equals(pwd)){
+        if (log_param!=null){
+            TUser user = tUserService.findTUserByParam(log_param);
+            if (user !=null&&jedisUtil.get(user.getLoginid(),0)==null&&
+                    user.getPassword().equals(pwd)){
+                //添加用户认证信息
+                Subject subject = SecurityUtils.getSubject();
+                UsernamePasswordToken usernamePasswordToken
+                        = new UsernamePasswordToken(user.getLoginid(), pwd);
+                //进行验证，这里可以捕获异常，然后返回对应信息
+                subject.login(usernamePasswordToken);
+                //System.out.println("loginShiro:" + usernamePasswordToken);
+                Map<String,Object> resp = new HashMap<String, Object>();
+                jedisUtil.set(user.getLoginid(),"1",0);
+                resp.put("log_id",user.getLoginid());
+                controllerResult.setPayload(resp);
                 controllerResult.setCode(DatasourceEnum.SUCCESS.getCode());
                 controllerResult.setMsg(DatasourceEnum.SUCCESS.getMsg());
             }

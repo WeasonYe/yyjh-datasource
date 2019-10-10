@@ -26,9 +26,34 @@ $(document).ready(function() {
 	})
 
 	$(db_btns[3]).click(function() {
-		//REDIS弹窗
-		$("#showDrivers_choosen").modal("hide")
-	})
+        //REDIS弹窗
+        $("#showDrivers_choosen").modal("hide")
+        $("#redis_conf").modal("show")
+
+    })
+    //登出
+    $("#logout").click(function () {
+        $.ajax({
+            type:"post",
+            url:"/index/logout",
+            data:{
+                'log_id':sessionStorage.getItem("log_id")
+            },
+            datatype:"json",
+            success:function(data){
+                if (data.code==0){
+                    sessionStorage.removeItem("log_id")
+                    $.ajax({
+                        type:"post",
+                        url:"/router/logout",
+                        error:function () {
+                            window.location.href="/router/login"
+                        }
+                    })
+                }else alert("登出失败")
+            }
+        })
+    })
 
 	//CSV操作
 	csv_load("#csv_upload");

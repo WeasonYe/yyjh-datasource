@@ -67,6 +67,9 @@
 
 		<div class="container">
 			<div class="row">
+				<button id="logout" class="btn btn-danger " >登出</button>
+			</div>
+			<div class="row">
 				<button id="add-btn" class="btn btn-success add-btn" data-toggle="modal" data-target="#showDrivers_choosen">添加数据</button>
 			</div>
             <div class="row">
@@ -588,6 +591,52 @@
 				</div>
 				<!-- /.modal-dialog -->
 			</div>
+			
+			<div id="redis_conf" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+
+						<div class="choose-label text-center">redis参数配置入库
+							<span class="close glyphicon glyphicon-remove" data-dismiss="modal" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div role="form" class="form-horizontal center">
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon">IP地址</span>
+									<input id="r_ip" type="text" placeholder="请输入IP地址" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon">端口号</span>
+									<input id="r_port" type="text" placeholder="请输入端口号"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon">密&nbsp&nbsp&nbsp码</span>
+									<input id="r_pwd" type="password" placeholder="请输入密码"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<button id="r_test" class="btn btn-default">测试连接</button>
+							</div>
+							<div class="form-group">
+								<button id="r_clear" class="btn btn-default">重置</button>
+								<button id="r_sub" class="btn btn-default">入库</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 		</div>
 	</body>

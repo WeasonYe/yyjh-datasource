@@ -4,8 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.sxp.tools.ExcelOper;
-import com.sxp.tools.YYJHTools;
+import com.sxp.tools.*;
 import com.sxp.yyjhservice.domain.datasource.TDatasource;
 import com.sxp.yyjhservice.enumeration.DatasourceEnum;
 import com.sxp.yyjhservice.service.datasource.TDatasourceService;
@@ -14,7 +13,6 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.io.FileUtils;
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import tools.ExcelAnalysis;
-import tools.ExcelScreen;
-import tools.JDBCTools;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -170,7 +165,7 @@ public class ExcelSourceController {
                     System.out.println(keys);
                     String stringWareHouseDatas = mapper.writeValueAsString(sheet_datas);
                     ArrayNode wareHouseDatas = mapper.readValue(stringWareHouseDatas, ArrayNode.class);
-                    boolean flag = JDBCTools.createTable(tablename + "_sheet" + i, keys, wareHouseDatas, keys.get(0));
+                    boolean flag = JDBCTools.createTable(tablename + "_sheet" + i, keys, wareHouseDatas);
                     System.out.println(flag);
                 }
                 result.setCode(0);
@@ -178,7 +173,7 @@ public class ExcelSourceController {
                 result.setCode(-1);
             }
         } else {
-            try {
+//            try {
                 JsonNode interpret_filter=rootNode.get("interpret_filter");
                 System.out.println(interpret_filter);
                 String start_line=interpret_filter.path("start_line").asText();
@@ -189,7 +184,7 @@ public class ExcelSourceController {
                 System.out.println(index_string);
                 File file=new File(path);
                 List<Map<String, Object>> datas = ExcelScreen.findDate(file,start_line,end_line,index_string,index_logic);
-                System.out.println("数据：" + datas);
+                System.out.println("数据：" + datas+","+datas.size());
                 int keylength = 0;
                 for (int i = 0; i < datas.size(); i++) {
                     List<String> keys = new ArrayList<String>();
@@ -207,13 +202,13 @@ public class ExcelSourceController {
                     String stringWareHouseDatas = mapper.writeValueAsString(sheet_datas);
                     ArrayNode wareHouseDatas = mapper.readValue(stringWareHouseDatas, ArrayNode.class);
                     System.out.println(wareHouseDatas);
-                    boolean flag = JDBCTools.createTable(tablename + "_sheet" + i, keys, wareHouseDatas, keys.get(0));
+                    boolean flag = JDBCTools.createTable(tablename + "_sheet" + i, keys, wareHouseDatas);
                     System.out.println(flag);
                 }
                 result.setCode(0);
-            } catch (Exception e) {
-                result.setCode(-1);
-            }
+//            } catch (Exception e) {
+//                result.setCode(-1);
+//            }
 
         }
         return result;
