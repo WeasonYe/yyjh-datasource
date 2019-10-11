@@ -17,7 +17,10 @@ $(document).ready(function(){
                         alert("配置成功");
                         $("#r_clear").click();
                     }else alert("配置失败");
-                }
+                },
+			error: function(result){
+				alert("抱歉，您没有该操作的权限！");
+			}
             })
         }
 	})

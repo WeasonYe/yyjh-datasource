@@ -44,7 +44,7 @@ public class ShiroConfiguration {
         //登录
         shiroFilterFactoryBean.setLoginUrl("/router/login");
         //认证成功跳转
-        //shiroFilterFactoryBean.setSuccessUrl("/router/datasource");
+        shiroFilterFactoryBean.setSuccessUrl("/router/datasource");
         //错误页面，认证不通过跳转
         shiroFilterFactoryBean.setUnauthorizedUrl("/router/errorpage");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);

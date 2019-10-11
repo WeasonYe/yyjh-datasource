@@ -9,6 +9,9 @@ import com.sxp.yyjhservice.enumeration.DatasourceEnum;
 import com.sxp.yyjhservice.service.datasource.TDatasourceService;
 import com.sxp.yyjhservice.vo.ControllerResult;
 import org.apache.poi.ss.formula.functions.T;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +30,8 @@ public class DataSourceController {
     private TDatasourceService tDatasourceService;
 
     @RequestMapping("/delTDataSourceById")
-    @ResponseBody
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"delete"})
     public Object delTDataSourceById(@RequestParam Integer id) {
         System.out.println(id);
         boolean flag = tDatasourceService.delTDataSourceById(id);
@@ -43,6 +47,8 @@ public class DataSourceController {
     }
 
     @RequestMapping("/addTDataSource")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object addTDataSource(@RequestParam String json) throws Exception{
         Map<String, Object> result = new HashMap<String, Object>();
         try {
@@ -61,6 +67,8 @@ public class DataSourceController {
     }
 
     @RequestMapping("/findTDataSourceById")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"select"})
     public Object findTDataSourceById(@RequestParam Integer id) throws Exception{
         TDatasource tDatasource = new TDatasource();
         tDatasource = tDatasourceService.findTDataSourceById(id);
@@ -75,6 +83,8 @@ public class DataSourceController {
     }
 
     @PostMapping("/updTDataSourceById")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"select"})
     public Object updTDataSourceById(@RequestParam String json,@RequestParam String excel_interpret) throws Exception{
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.NOFILE.getCode());
@@ -103,7 +113,8 @@ public class DataSourceController {
     }
 
     @RequestMapping("/getAll")
-    @ResponseBody
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"select"})
     public Object getAll() {
         List<TDatasource> tDatasources;
         tDatasources = tDatasourceService.getAll();
@@ -119,7 +130,8 @@ public class DataSourceController {
 
 
     @RequestMapping("/getTDatasourceListPage")
-    @ResponseBody
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"select"})
     public PageHelper<TDatasource> getTDatasourceListPage(TDatasource tDatasource, HttpServletRequest request) {
         System.out.println(tDatasource);
         PageHelper<TDatasource> pageHelper = new PageHelper<>();
@@ -136,6 +148,8 @@ public class DataSourceController {
 
 //    批量删除
     @RequestMapping("/batchDeleteById")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"delete"})
     public Object batchDeleteById(@RequestParam String ids) throws IOException {
         ArrayNode idsarry = new ObjectMapper().readValue(ids,ArrayNode.class);
         List<Integer> idsList = new ArrayList<>();

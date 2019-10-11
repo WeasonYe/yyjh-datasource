@@ -17,6 +17,9 @@ import com.sxp.yyjhservice.service.user.TUserService;
 import com.sxp.yyjhservice.vo.ControllerResult;
 import com.sxp.yyjhservice.vo.RolePerVO;
 import com.sxp.yyjhservice.vo.UserRoleVO;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +27,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.sql.DatabaseMetaData;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +56,8 @@ public class AuthController {
     private TPermissionService tPermissionService;
 
     @RequestMapping("/getUserRoles")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"u_r_conf"})
     public Object getUserRole() {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -75,6 +79,8 @@ public class AuthController {
     }
 
     @RequestMapping("/getRolePer")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"r_p_conf"})
     public Object getRolePer() {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -95,6 +101,8 @@ public class AuthController {
     }
 
     @RequestMapping("/getOneUR")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"u_r_conf"})
     public Object getOneUR(@RequestParam("u_id") Integer id) {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -128,6 +136,8 @@ public class AuthController {
     }
 
     @RequestMapping("/getOneRP")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"r_p_conf"})
     public Object getOneRP(@RequestParam("r_id") Integer id) {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -161,6 +171,8 @@ public class AuthController {
     }
 
     @RequestMapping("/confUserRole")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"u_r_conf"})
     public Object confUserRole(@RequestParam("conf_info") String conf_info) throws IOException {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -185,6 +197,8 @@ public class AuthController {
     }
 
     @RequestMapping("/confRolePer")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"r_p_conf"})
     public Object confRolePer(@RequestParam("conf_info") String conf_info) throws IOException {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -209,6 +223,8 @@ public class AuthController {
     }
 
     @RequestMapping("/delUserRole")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"u_r_conf"})
     public Object delUserRole(@RequestParam("del_ur_id") Integer id){
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -223,6 +239,8 @@ public class AuthController {
     }
 
     @RequestMapping("/delRolePer")
+    @RequiresRoles(value = {"super_admin","auth_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"r_p_conf"})
     public Object delRolePer(@RequestParam("del_rp_id") Integer id){
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());

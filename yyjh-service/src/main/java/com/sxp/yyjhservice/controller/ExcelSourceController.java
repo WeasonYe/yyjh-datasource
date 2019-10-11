@@ -13,6 +13,9 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.io.FileUtils;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +28,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +64,8 @@ public class ExcelSourceController {
 
     //上传
     @RequestMapping("/excelUpload")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object excelUpload(@RequestParam("excel_upload")MultipartFile[] files,
                               @RequestParam("excel_interpret")String excel_interpret) throws IOException {
         ControllerResult result = new ControllerResult();
@@ -114,6 +118,8 @@ public class ExcelSourceController {
 
     //预览
     @RequestMapping("/excelPreview")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object excelPreview(@RequestParam("excel_upload") MultipartFile[] param_files) throws IOException {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.NOFILE.getCode());
@@ -130,6 +136,8 @@ public class ExcelSourceController {
 
     //入库
     @RequestMapping("/excelWarehouse")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object excelWarehouse(@RequestParam Integer id) throws Exception {
         ControllerResult result = new ControllerResult();
         TDatasource tDatasource=tDatasourceService.findTDataSourceById(id);

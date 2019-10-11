@@ -8,6 +8,9 @@ import com.sxp.yyjhservice.domain.datasource.TDatasource;
 import com.sxp.yyjhservice.enumeration.DatasourceEnum;
 import com.sxp.yyjhservice.service.datasource.TDatasourceService;
 import com.sxp.yyjhservice.vo.ControllerResult;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +30,8 @@ public class RedisConfController {
     JedisUtil jedisUtil;
 
     @RequestMapping("/redisConfig")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object redisConfig(@RequestParam("r_ip")String ip,@RequestParam("r_port")Integer port,@RequestParam("r_pwd")String pwd){
         ControllerResult controllerResult = new ControllerResult();
         controllerResult.setCode(DatasourceEnum.FAIL.getCode());
@@ -42,7 +47,6 @@ public class RedisConfController {
             controllerResult.setCode(DatasourceEnum.SUCCESS.getCode());
             controllerResult.setMsg(DatasourceEnum.SUCCESS.getMsg());
         }
-
         return controllerResult;
     }
 
@@ -63,17 +67,37 @@ public class RedisConfController {
         return controllerResult;
     }
 
-    @RequestMapping("/redisInDb")
-    public Object redisInDb(@RequestParam("db_nums")String[] db_nums) throws IOException, SQLException {
+    @RequestMapping("/getRedisDb")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
+    public Object getRedisDb(){
         ControllerResult controllerResult = new ControllerResult();
         controllerResult.setCode(DatasourceEnum.FAIL.getCode());
         controllerResult.setMsg(DatasourceEnum.FAIL.getMsg());
 
-        if (db_nums.length!=0){
+        List<String> dbs = jedisUtil.getDBS();
+        if (dbs.size()>0){
+            controllerResult.setCode(DatasourceEnum.SUCCESS.getCode());
+            controllerResult.setMsg(DatasourceEnum.SUCCESS.getMsg());
+            controllerResult.setPayload(dbs);
+        }
+        return controllerResult;
+    }
+
+    @RequestMapping("/redisInDb")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
+    public Object redisInDb(@RequestParam("db_nums")String db_nums) throws IOException, SQLException {
+        ControllerResult controllerResult = new ControllerResult();
+        controllerResult.setCode(DatasourceEnum.FAIL.getCode());
+        controllerResult.setMsg(DatasourceEnum.FAIL.getMsg());
+
+        ArrayNode dbs = new ObjectMapper().readValue(db_nums,ArrayNode.class);
+        if (dbs.size()!=0){
             List<String> colName = new ArrayList<>();//redis库的列名
             colName.add("r_key");colName.add("r_value");
-            for (int i = 0;i < db_nums.length;i++){
-                int db = Integer.parseInt(db_nums[i]);//入库的redis库号
+            for (int i = 0; i < dbs.size(); i++){
+                int db = dbs.get(i).asInt();//入库的redis库号
                 Iterator<String> keys = jedisUtil.getDBKeys(db).iterator();
                 List<Map<String,Object>> dataList = new ArrayList<>();//一个redis库建一张表
                 while (keys.hasNext()){
@@ -90,8 +114,6 @@ public class RedisConfController {
             controllerResult.setCode(DatasourceEnum.SUCCESS.getCode());
             controllerResult.setMsg(DatasourceEnum.SUCCESS.getMsg());
         }
-
-
         return controllerResult;
     }
 }

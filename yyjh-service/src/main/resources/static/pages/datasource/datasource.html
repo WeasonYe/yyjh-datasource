@@ -9,6 +9,7 @@
 		<link href="../../bootstrap/css/bootstrap-select.css" rel="stylesheet" type="text/css">
 		<link href="../../css/datatables.min.css"></link>
 		<link href="../../css/buttons.dataTables.css">
+		<link href="../../css/font-awesome.css"/>
 		<style>
 			table{
 				table-layout : auto;
@@ -49,6 +50,16 @@
 			input[type='file'] {
 				visibility: hidden;
 			}
+			
+			#self_info{
+				font-size: 25px; 
+				font: '微软雅黑';
+			}
+			
+			#self_info img{
+				width: 150px; 
+				height: 150px;
+			}
 		</style>
 	</head>
 
@@ -64,7 +75,41 @@
 		<script src="../../js/datatables.min.js"></script>
         <script src="../../js/datasource_control.js"></script>
 		<script src="../../js/dataTables.buttons.js"></script>
-
+		<script src="../../js/authconf.js"></script>
+		<script src="../../js/ds-mysql.js"></script>
+		<script src="../../js/redis.js"></script>
+		
+		<script type="application/javascript">
+			$(document).ready(function(){
+				$("#self").click(function(){
+					let self_info_html="<div id='self_info' class='row'>";
+					$.ajax({
+						type:"post",
+						url:"/user/getself",
+						async:false,
+						data:{log_id:sessionStorage.getItem('log_id')},
+						dataType:"json",
+						success:function(result,status,xhr){
+							if(result.code == 0){
+								let user = result.payload;
+								self_info_html += "<div class='row'><span class='col-lg-2'>头像</span><img src='../../img/" + user.userimg + "'/></div>"
+								self_info_html += "<div class='row'><span class='col-lg-2'>用户ID</span><span class='col-lg-10'>" + user.id + "</span></div>"
+								self_info_html += "<div class='row'><span class='col-lg-2'>账号</span><span class='col-lg-10'>" + user.loginid + "</span></div>"
+								self_info_html += "<div class='row'><span class='col-lg-2'>昵称</span><span class='col-lg-10'>" + user.nickname + "</span></div>"
+								self_info_html += "<div class='row'><span class='col-lg-2'>邮箱</span><span class='col-lg-10'>" + user.email + "</span></div>"
+								self_info_html += "<div class='row'><span class='col-lg-2'>手机号码</span><span class='col-lg-10'>" + user.tel + "</span></div>"
+								self_info_html += "</div>"
+								
+								$(".container").append($(self_info_html));
+							}else{
+								alert("获取个人信息失败");
+							}
+						}
+					})
+				})
+			})
+		</script>
+		
 		<div class="container">
 			<div class="row">
 				<button id="logout" class="btn btn-danger " >登出</button>
@@ -75,9 +120,58 @@
             <div class="row">
                 <button id="control-btn" class="btn btn-danger add-btn" data-toggle="modal" data-target="#datasource_control">数据源管理</button>
             </div>
-			<div class="row">
-				<!-- 数据源表格-->
-			</div>
+            <div class="row">
+                <button id="self" class="btn btn-danger">个人信息</button>
+            </div>
+			<!--<div id="self_info" class="row">
+				<!-- 个人信息表格-->
+				<!--<div class="row">
+					<span class="col-lg-2">
+						头像
+					</span>
+					<img src="../../img/sky.jpg"/>
+				</div>
+				<div class="row">
+					<span class="col-lg-2" >
+						用户ID
+					</span>
+					<span class="col-lg-10" >
+						1
+					</span>
+				</div>
+				<div class="row" >
+					<span class="col-lg-2" >
+						账号
+					</span>
+					<span class="col-lg-10">
+						zhuminghang
+					</span>
+				</div>
+				<div class="row" >
+					<span class="col-lg-2" >
+						昵称
+					</span>
+					<span class="col-lg-10">
+						朱明航
+					</span>
+				</div>
+				<div class="row" >
+					<span class="col-lg-2" >
+						邮箱
+					</span>
+					<span class="col-lg-10">
+						qq@qq.com
+					</span>
+				</div>
+				<div class="row" >
+					<span class="col-lg-2" >
+						手机号码
+					</span>
+					<span class="col-lg-10">
+						12345678910
+					</span>
+				</div>
+			</div>-->
 
 			<!-- 数据源选择模态框 -->
 			<div>
@@ -318,7 +412,7 @@
 														</span>
 													</div>
 												</div>
-												<div class="oper_string">
+												<div id="screen_div" class="oper_string">
 														<div>
 															<label>起始文本：</label>
 															<input type="text" class="form-inline" />
@@ -349,6 +443,251 @@
 					</div>
 				</div>
 			</div>
+			
+			<!-- MYSQL数据源导入模态框 -->
+		<div>
+			<div id="mysql_import" class="modal fade bs-modal-lg" data-backdrop="static">
+				<div>
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content modal-content-color">
+							<div class="modal-header">
+								<div class="choosen-label">数据源导入
+									<span data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+								</div>
+							</div>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-lg-10"></div>
+									<div class="col-lg-1">
+										<button class="btn btn-success" onclick="addmysqlconf()">添加</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-1"></div>
+									<div class="col-lg-10">
+										<div class="row files csv-files">
+											<!--文件上传功能-->
+											<div>
+												<!--生成文件上传信息-->
+												<table id="mysql_datas" class="table table-bordered" style="width:100%">
+													<thead>
+													<tr>
+														<th>连接名</th>
+														<th>数据库名</th>
+														<th>端口号</th>
+														<th>用户名</th>
+														<th>编码格式</th>
+														<th>备注</th>
+													</tr>
+													</thead>
+													<tbody>
+													</tbody>
+													<tfoot>
+													</tfoot>
+												</table>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-1"></div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button id="mysql_submit" class="btn btn-success">全部上传</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--mysql数据源配置模态框-->
+		<div>
+			<div id="mysql_conf" class="modal fade bs-modal-lg" data-backdrop="static">
+				<div>
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content modal-content-color">
+							<div class="modal-header">
+								<div class="choosen-label">mysql数据源配置
+									<span id="mysql_conf_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+								</div>
+							</div>
+							<form action="#" onsubmit="return false">
+								<div class="modal-body" id="mysql_conf_info">
+									<div>
+										<label>连接名：</label>
+										<input type="text" class="form-control" />
+									</div>
+									<div>
+										<label>数据库名：</label>
+										<input type="text" class="form-control" />
+									</div>
+									<div>
+										<label>端口号：</label>
+										<input type="text" class="form-control" />
+									</div>
+									<div>
+										<label>用户名：</label>
+										<input type="text" class="form-control" />
+									</div>
+									<div>
+										<label>密码：</label>
+										<input type="password" class="form-control" />
+									</div>
+									<div>
+										<label>编码格式：</label>
+										<input type="text" class="form-control" />
+									</div>
+									<div>
+										<label>备注：</label>
+										<input type="text" class="form-control" />
+									</div>
+								</div>
+								<div class="modal-footer">
+									<input id="m_c_reset" type="reset" value="重置" class="btn btn-default" />
+									<button id="m_c_confirm" class="btn btn-success" onclick="m_confirm()">确认</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--用户-角色配置删除确认模态框-->
+			<div>
+				<div id="del_ur_confirm" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<div class="choosen-label">确认删除？</div>
+								</div>
+									<div class="modal-body">
+										<div class="row">
+											<label>是否删除以下纪录</label>
+										</div>
+										<div class="row">
+											<label>记录ID:<span id="del_ur_id"></span></label>
+										</div>
+										<div class="row">
+											<label>用户名:<span id="del_ur_username"></span></label>
+										</div>
+										<div class="row">
+											<label>角色名:<span id="del_ur_rolename"></span></label>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-danger" onclick="del_ur()">确定</button>
+										<button class="btn btn-default" onclick="$('#del_ur_confirm').modal('hide')">取消</button>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--用户-角色配置模态框-->
+			<div>
+				<div id="auth_ur_conf" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<div class="choosen-label">用户-角色配置</div>
+								</div>
+								<form action="#" onsubmit="return false">
+									<div class="modal-body">
+										<div class="row">
+											<label>用户名:<span id="ur_username"></span></label>
+										</div>
+										<div class="row">
+											<label>角色选择:</label>
+											<div id="ur_check">
+												
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<input type="reset" value="重置" class="btn btn-default" />
+										<button id="auth_ur_submit" class="btn btn-success">提交配置</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--角色-操作配置删除确认模态框-->
+			<div>
+				<div id="del_rp_confirm" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<div class="choosen-label">确认删除？</div>
+								</div>
+									<div class="modal-body">
+										<div class="row">
+											<label>是否删除以下纪录</label>
+										</div>
+										<div class="row">
+											<label>记录ID:<span id="del_rp_id"></span></label>
+										</div>
+										<div class="row">
+											<label>角色名:<span id="del_rp_rolename"></span></label>
+										</div>
+										<div class="row">
+											<label>操作名:<span id="del_rp_permission"></span></label>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-danger" onclick="del_rp()">确定</button>
+										<button class="btn btn-default" onclick="$('#del_rp_confirm').modal('hide')">取消</button>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--角色-操作配置模态框-->
+			<div>
+				<div id="auth_rp_conf" class="modal fade bs-modal-lg" data-backdrop="static">
+					<div>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content modal-content-color">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<div class="choosen-label">角色-操作配置</div>
+								</div>
+								<form action="#" onsubmit="return false">
+									<div class="modal-body">
+										<div class="row">
+											<label>角色名:<span id="rp_rolename"></span></label>
+										</div>
+										<div class="row">
+											<label>操作选择:</label>
+											<div id="rp_check">
+												
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<input type="reset" value="重置" class="btn btn-default" />
+										<button id="auth_rp_submit" class="btn btn-success">提交配置</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 
            <!--数据源管理模态框-->
             <div>
@@ -533,7 +872,7 @@
 														</span>
 																</div>
 															</div>
-															<div class="oper_string" style="border-bottom:1px dashed" >
+															<div id="upd_screen_div" class="oper_string" style="border-bottom:1px dashed" >
 																<div>
 																	<label>起始文本：</label>
 																	<input type="text" class="form-inline" />

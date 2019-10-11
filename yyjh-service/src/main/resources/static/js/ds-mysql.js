@@ -17,6 +17,9 @@ $(document).ready(function(){
 				}else{
 					alert("上传失败");
 				}
+			},
+			error: function(result){
+				alert("抱歉，您没有该操作的权限！");
 			}
 		});
 	});

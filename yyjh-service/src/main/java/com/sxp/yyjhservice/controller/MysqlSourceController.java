@@ -10,6 +10,9 @@ import com.sxp.yyjhservice.domain.datasource.TDatasource;
 import com.sxp.yyjhservice.enumeration.DatasourceEnum;
 import com.sxp.yyjhservice.service.datasource.TDatasourceService;
 import com.sxp.yyjhservice.vo.ControllerResult;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,6 +34,8 @@ public class MysqlSourceController {
      * 必须的字段:url,username,password,encode
      * */
     @RequestMapping("/mysqlUpload")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     private Object mysqlUpload(@RequestParam String mysql_conf_str) throws IOException {
         boolean flag = true;
         ArrayNode mysql_confs = new ObjectMapper().readValue(mysql_conf_str, ArrayNode.class);
@@ -69,7 +74,9 @@ public class MysqlSourceController {
     }
 
     @RequestMapping("/mysqlTablesPreview")
-    public Object mysqlPreview(@RequestParam("msql_id") Integer id) throws SQLException {
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
+    public Object mysqlPreview(@RequestParam("mysql_id") Integer id) throws SQLException {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
         result.setMsg(DatasourceEnum.FAIL.getMsg());
@@ -80,15 +87,18 @@ public class MysqlSourceController {
         String thisurl = "jdbc:mysql://127.0.0.1:3306/yyjh_datasource?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";
         List<String> tables = JDBCTools.getTables(url,username,password);
         List<String> thistables = JDBCTools.getTables(thisurl,username,password);
-        for (String table: tables){//查找是否已入库
+        for (int i = 0; i < tables.size(); i++){//查找是否已入库
+            String table = tables.get(i);
             for (String thistable: thistables){
                 if (thistable.equals(table)){
-                    tables.remove(table);
+                    tables.remove(i);
+                    i--;
+                    break;
                 }
             }
         }
-        result.setPayload(tables);
         if (tables.size() > 0){
+            result.setPayload(tables);
             result.setCode(DatasourceEnum.SUCCESS.getCode());
             result.setMsg(DatasourceEnum.SUCCESS.getMsg());
         }
@@ -96,6 +106,8 @@ public class MysqlSourceController {
     }
 
     @RequestMapping("/mysqlSave")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object mysqlSave(@RequestParam("tables_name") String tablesName) throws IOException, SQLException {
         ControllerResult result = new ControllerResult();
         result.setCode(DatasourceEnum.FAIL.getCode());
@@ -105,7 +117,7 @@ public class MysqlSourceController {
         ArrayNode names_json = (ArrayNode) tables.get("tables_name");
         List<String> names = new ArrayList<String>();
         for (int i = 0; i < names_json.size(); i++){
-            names.add(names_json.get(i).get("name").asText());
+            names.add(names_json.get(i).asText());
         }
         TDatasource td = tDatasourceService.findTDataSourceById(id);
         String url = "jdbc:mysql://" + td.getUrl() + ":" + td.getPort() + "/" + td.getDatabaseName() + "?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";

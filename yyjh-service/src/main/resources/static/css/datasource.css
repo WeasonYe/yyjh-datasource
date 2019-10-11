@@ -1,0 +1,39 @@
+table{
+    table-layout : auto;
+}
+.colStyle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.add-btn {
+    float: right;
+    margin-top: 5%;
+}
+.choosen-btn {
+    align-content: center;
+    vertical-align: middle;
+    min-width: 200px;
+    min-height: 200px;
+    border: solid #000000 1px;
+    border-radius: 0;
+}
+.modal-content-color {
+    background-color: #e1edf9;
+}
+.choosen-label {
+    font-family: "微软雅黑";
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+.csv-files {
+    min-height: 300px;
+    min-width: 300px;
+    border: solid 1px;
+    margin-top: 10px;
+}
+input[type='file'] {
+    visibility: hidden;
+}

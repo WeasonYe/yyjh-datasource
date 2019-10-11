@@ -1,15 +1,29 @@
 $(document).ready(function() {
+	$("#add-auth-ur-btn").click(function() {
+		$("#auth_ur_conf").modal("show");
+	})
+	
 	$("#add-auth-rp-btn").click(function() {
 		$("#auth_rp_conf").modal("show");
 	})
 
-	$("#show_ur").click(function() {
+	$("#show_ur").click(function() {		
+		let boxs = $(".box");
+		for(let i = 0; i < boxs.length; i++){
+			$(boxs[i]).css('display','none');
+		}
+		$("#box2").css('display','block');
 		init_ur_table();
 		show_ur_table();
 		show_users();
 	})
 
 	$("#show_rp").click(function() {
+		let boxs = $(".box");
+		for(let i = 0; i < boxs.length; i++){
+			$(boxs[i]).css('display','none');
+		}
+		$("#box3").css('display','block');
 		init_rp_table();
 		show_rp_table();
 		show_roles();
@@ -43,7 +57,12 @@ $(document).ready(function() {
 						show_ur_table();
 					} else {
 						alert("提交配置失败")
+						$("#auth_ur_conf").modal("hide");
 					}
+				},
+				error: function(result, status, ehr){
+					alert("抱歉，您没有此操作的权限")
+					$("#auth_ur_conf").modal("hide");
 				}
 			});
 		} else {
@@ -81,7 +100,12 @@ $(document).ready(function() {
 						show_rp_table();
 					} else {
 						alert("提交配置失败")
+						$("#auth_rp_conf").modal("hide");
 					}
+				},
+				error: function(result, status, ehr){
+					alert("抱歉，您没有此操作的权限")
+					$("#auth_rp_conf").modal("hide");
 				}
 			});
 		} else {
@@ -135,13 +159,21 @@ function init_ur_table() {
 			} else {
 				alert("初始化表失败")
 			}
+		},
+		error: function(result, status, ehr){
+			alert("抱歉，您没有此操作的权限")
+			let boxs = $(".box");
+		for(let i = 0; i < boxs.length; i++){
+			$(boxs[i]).css('display','none');
+		}
+		$("#box5").css('display','block');
 		}
 	});
 }
 
 //展示可以被配置角色的用户
 function show_users() {
-	$("#user_table").bootstrapTable({
+	$("#show_user_table").bootstrapTable({
 		striped: true, //是否显示行间隔色
 		cache: false, //是否使用缓存
 		pageNumber: 1, //初始化加载第一页
@@ -181,12 +213,12 @@ function show_users() {
 	function addurbtns(value, row, index) {
 		return "<button onclick='conf_ur(this)' class='btn btn-success add-btn'>配置角色</button>";
 	}
-	$("#user_table").bootstrapTable("load", users);
+	$("#show_user_table").bootstrapTable("load", users);
 }
 
 //展示已配置的用户-角色表
 function show_ur_table() {
-	$("#ur_table").bootstrapTable({
+	$("#show_ur_table").bootstrapTable({
 		striped: true, //是否显示行间隔色
 		cache: false, //是否使用缓存
 		pageNumber: 1, //初始化加载第一页
@@ -255,7 +287,7 @@ function show_ur_table() {
 				return value;
 		}
 	}
-	$("#ur_table").bootstrapTable("load", urdatas);
+	$("#show_ur_table").bootstrapTable("load", urdatas);
 }
 //为用户配置角色
 function conf_ur(thisbtn) {
@@ -280,6 +312,9 @@ function conf_ur(thisbtn) {
 			} else {
 				alert("此用户无可配角色了")
 			}
+		},
+		error: function(result, status, ehr){
+			alert("抱歉，您没有此操作的权限")
 		}
 	});
 
@@ -326,6 +361,10 @@ function del_ur(){
 				$("#del_ur_confirm").modal("hide");
 				alert("删除失败")
 			}
+		},
+		error: function(result, status, ehr){
+			$("#del_ur_confirm").modal("hide");
+			alert("抱歉，您没有此操作的权限")
 		}
 	});
 }
@@ -354,12 +393,20 @@ function init_rp_table() {
 			} else {
 				alert("初始化表失败")
 			}
+		},
+		error: function(result, status, ehr){
+			alert("抱歉，您没有此操作的权限")
+			let boxs = $(".box");
+		for(let i = 0; i < boxs.length; i++){
+			$(boxs[i]).css('display','none');
+		}
+		$("#box5").css('display','block');
 		}
 	});
 }
 
 function show_rp_table() {
-	$("#rp_table").bootstrapTable({
+	$("#show_rp_table").bootstrapTable({
 		striped: true, //是否显示行间隔色
 		cache: false, //是否使用缓存
 		pageNumber: 1, //初始化加载第一页
@@ -456,11 +503,11 @@ function show_rp_table() {
 		}
 	}
 	
-	$("#rp_table").bootstrapTable("load", rpdatas);
+	$("#show_rp_table").bootstrapTable("load", rpdatas);
 }
 
 function show_roles() {
-	$("#role_table").bootstrapTable({
+	$("#show_roles_table").bootstrapTable({
 		striped: true, //是否显示行间隔色
 		cache: false, //是否使用缓存
 		pageNumber: 1, //初始化加载第一页
@@ -517,7 +564,7 @@ function show_roles() {
 				return value;
 		}
 	}
-	$("#role_table").bootstrapTable("load", roles);
+	$("#show_roles_table").bootstrapTable("load", roles);
 }
 
 function conf_rp(thisbtn) {
@@ -542,6 +589,9 @@ function conf_rp(thisbtn) {
 			} else {
 				alert("此角色无可配权限了")
 			}
+		},
+		error: function(result, status, ehr){
+			alert("抱歉，您没有此操作的权限")
 		}
 	});
 
@@ -584,9 +634,6 @@ function show_del_rp(thisbtn) {
 
 function del_rp(){
 	let id = $("#del_rp_id").text();
-	
-	console.log(id);
-	
 	$.ajax({
 		type: "post",
 		url: "/authority/delRolePer",
@@ -603,6 +650,10 @@ function del_rp(){
 				$("#del_rp_confirm").modal("hide");
 				alert("删除失败");
 			}
+		},
+		error: function(result, status, ehr){
+			$("#del_rp_confirm").modal("hide");
+			alert("抱歉，您没有此操作的权限")
 		}
 	});
 }

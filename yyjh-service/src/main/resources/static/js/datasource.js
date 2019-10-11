@@ -29,28 +29,32 @@ $(document).ready(function() {
         //REDIS弹窗
         $("#showDrivers_choosen").modal("hide")
         $("#redis_conf").modal("show")
-
     })
     //登出
     $("#logout").click(function () {
         $.ajax({
             type:"post",
             url:"/index/logout",
+            async:false,
             data:{
                 'log_id':sessionStorage.getItem("log_id")
             },
-            datatype:"json",
+            dataType:"json",
             success:function(data){
                 if (data.code==0){
-                    sessionStorage.removeItem("log_id")
-                    $.ajax({
+                	sessionStorage.removeItem("log_id")
+                	$.ajax({
                         type:"post",
                         url:"/router/logout",
                         error:function () {
                             window.location.href="/router/login"
                         }
                     })
-                }else alert("登出失败")
+
+                }else{
+                    alert("登录失败");
+                    getCode();
+                }
             }
         })
     })
@@ -266,6 +270,9 @@ function csv_load(element_id) {
 			} else if(result.code == -1) {
 				alert("操作失败！")
 			}
+		},
+		fail: function(e,data){
+			alert("抱歉，您没有该操作的权限");
 		}
 	});
 }
@@ -470,6 +477,9 @@ function excel_load(element_id) {
 			} else if(result.code == -1) {
 				alert("操作失败！")
 			}
+		},
+		fail: function(e,data){
+			alert("抱歉，您没有该操作的权限");
 		}
 	});
 }
@@ -503,14 +513,14 @@ function excel_interpret_submit(){
 	if(index_logic != undefined)
 		interpret_filter["index_logic"] = index_logic;
 	let index_string = [];
-	let oper_string_div = $(".oper_string");
+	let oper_string_div = $("#screen_div");
 	for(let i = 0; i < oper_string_div.length; i++){//组装筛选json
 		let oper = oper_string_div[i]
 		let oper_string = {}
 		let	start_string = $(oper).find("input:eq(0)").val();
 		let	end_string = $(oper).find("input:eq(1)").val();
 		let	content_string = $(oper).find("input:eq(2)").val();
-		if(start_string != "" || end_line != "" ||
+		if(start_string != "" || end_string != "" ||
 			content_string != ""){
 				oper_string["start_string"] = start_string;
 				oper_string["end_string"] = end_string;
@@ -519,6 +529,7 @@ function excel_interpret_submit(){
 		}
 	}
 	if(index_string.length != 0 ){
+        console.log(index_string);
 		interpret_filter["index_string"] = index_string;
 	}
 	if(JSON.stringify(interpret_filter) != "{}"){

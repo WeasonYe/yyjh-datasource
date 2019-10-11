@@ -11,6 +11,9 @@ import com.sxp.yyjhservice.enumeration.DatasourceEnum;
 import com.sxp.yyjhservice.service.datasource.TDatasourceService;
 import com.sxp.yyjhservice.vo.ControllerResult;
 import org.apache.commons.io.FileUtils;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +37,8 @@ public class CsvSourceController {
 
     //CSV上传
     @RequestMapping("/csvUpload")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object csvUpload(@RequestParam("csv_upload") MultipartFile[] files) throws IOException {
         ControllerResult result=new ControllerResult();
         result.setCode(DatasourceEnum.NOFILE.getCode());
@@ -75,6 +80,8 @@ public class CsvSourceController {
     }
     //CSV预览
     @RequestMapping("/previewCSV")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object previewCSV(
             @RequestParam("csv_upload") MultipartFile[] files,
             @RequestParam("csv_interpret") String interpret
@@ -119,6 +126,8 @@ public class CsvSourceController {
     }
 
     @RequestMapping("/csvSave")
+    @RequiresRoles(value = {"super_admin","data_manager"},logical = Logical.OR)
+    @RequiresPermissions(value = {"add"})
     public Object csvSave(@RequestParam("csvsave_id") Integer id, @RequestParam("csvsave_interpret") String interpret) throws IOException, SQLException {
         ControllerResult result = new ControllerResult();
         ObjectMapper om = new ObjectMapper();
