@@ -1,12 +1,9 @@
 package com.sxp.tools;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 import java.io.IOException;
 import java.sql.*;
@@ -58,9 +55,12 @@ public class JDBCTools {
             count = smt.executeUpdate(tableSql);
         }
         if (count==0){
+            conn.close();
             return true;
-        }else
+        }else{
+            conn.close();
             return false;
+        }
     }
 
     /**
@@ -107,9 +107,13 @@ public class JDBCTools {
             count = smt.executeUpdate(tableSql);
         }
         if (count==0){
+            conn.close();
             return true;
-        }else
+        }else{
+            conn.close();
             return false;
+        }
+
     }
 
     /**
@@ -254,10 +258,14 @@ public class JDBCTools {
                 sql = sql.substring(0,sql.length()-2) + ";";
 
                 Statement smt = conn.createStatement();
-                if (smt.executeUpdate(sql) == 0)
+                if (smt.executeUpdate(sql) == 0){
+                    conn.close();
                     return true;
+                }
+
             }
         }
+        conn.close();
         return false;
     }
 }
